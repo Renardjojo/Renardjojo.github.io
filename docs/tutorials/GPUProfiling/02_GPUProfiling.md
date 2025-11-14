@@ -1,3 +1,8 @@
+---
+title: GPU profiling
+description: Avec Pix
+---
+
 # Profiling GPU - Pix (1h)
 
 ## Intro

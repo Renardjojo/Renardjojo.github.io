@@ -75,8 +75,7 @@ nav:
   - Tutorials:
       - tutorials/index.md
       - GPU Profiling:
-        - tutorials/GPUProfiling/00_index.md
-        - 01 Intro: tutorials/GPUProfiling/01_Introduction.md
-        - 02 Frame Analysis: tutorials/GPUProfiling/02_FrameAnalysis.md
-        - 03 GPU profiling: tutorials/GPUProfiling/03_GPUProfiling.md
-        - 04 Rapport de profiling: tutorials/GPUProfiling/04_RapportProfiling.md
+        - 01 Intro: tutorials/GPUProfiling/00_Introduction.md
+        - 02 Frame Analysis: tutorials/GPUProfiling/01_FrameAnalysis.md
+        - 03 GPU profiling: tutorials/GPUProfiling/02_GPUProfiling.md
+        - 04 Rapport de profiling: tutorials/GPUProfiling/03_RapportProfiling.md

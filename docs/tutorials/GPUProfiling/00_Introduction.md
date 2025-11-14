@@ -1,3 +1,7 @@
+---
+title: 00 Introduction
+---
+
 # Profiling GPU – Introduction (30min)
 
 ![Tutorial Cover](assets/profiling_gpu_intro.png)

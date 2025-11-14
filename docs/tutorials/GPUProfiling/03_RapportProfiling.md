@@ -1,6 +1,11 @@
+---
+title: 03 Rapport de profiling
+description: Qu'est ce que c'est et comment le construire
+---
+
 # Rapport profiling GPU - Pix (1h)
 
-!!! Réflechissez à ce sujet avec de passer à la suite. 
+??? Réflechissez à ce sujet avec de passer à la suite. 
 Que devrait contenir un rapport de profiling pour vous ?
 
 Un rapport de profiling est un document permettant de mieu comprendre le fonctionnement du jeu. Celui ci peut contenir beaucoup d'élement d'étude:
