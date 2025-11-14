@@ -2,35 +2,38 @@
 title: 00 Introduction
 ---
 
-# Profiling GPU – Introduction (30min)
+# Profiling GPU – Introduction (30 min)
 
 ![Tutorial Cover](assets/profiling_gpu_intro.png)
 
 ## Introduction
 
-Dans ce tuto, nous allons voir les méthodes permettant de comprendre et profiler le pipeline de rendu d'une frame d'un jeu. 
+Dans ce tutoriel, nous allons explorer les méthodes permettant de comprendre et de profiler le pipeline de rendu d'une frame de jeu.
 
-Une optimisation dois faire suite à une observation fidèle au risque d'entrainer une perte de temps, de générer des bugs ou d'entrainer une mauvaise compréhension de la frame. 
+Une optimisation doit toujours découler d’une observation précise. Sans cela, on risque de perdre du temps, de générer des bugs ou d’aboutir à une mauvaise compréhension du comportement de la frame.
 
-Pour comprendre une frame il est important de définir dans un premier temps le contexte dans lequel on souhaite la regarder:
-- Platform et architecture de la platform étudiée
-- Setting graphique
-- Contexte en jeu 
-- Mode de rendu (API graphique, tile based rendering, forward/gbuffer/autre...)
+Pour analyser une frame, il est essentiel de définir le contexte dans lequel on souhaite l’étudier :
+- Platform et architecture matérielle
+- Settings graphiques
+- Contexte in-game
+- Mode de rendu (API graphique, tile-based rendering, forward, gbuffer, autres)
 - Mode de build
 
-Ce contexte va avoir une forte incidence sur le choix des outils à utiliser car chaque outils à ses propres limitations.
+Ce contexte influence fortement le choix des outils, chacun ayant ses propres limitations.
 
-De la même façon, il est important d'avoir une bonne connaissance du jeu pour proposer des optimisation contextuel. 
-- La camera se déplace t'elle ? 
-- A t'on un jeu dynamique ou plutot statique ? 
-- Le lighting est il statique ou dynamique ? 
-- A quel distance voit on le jeu ?
-- Etc...
+De la même manière, une bonne connaissance du jeu est indispensable pour proposer des optimisations contextuelles :
+- La caméra se déplace-t-elle ?
+- Le jeu est-il dynamique ou plutôt statique ?
+- Le lighting est-il statique ou dynamique ?
+- À quelle distance observe-t-on la scène ?
+- Etc.
 
-Ce tutorial est étudié pour être fait sous la forme d'un TP a partir de cas pratique vous permettant ainsi de pratiquer et comprendre par vous même.
+Ce tutoriel est conçu sous la forme d’un TP basé sur des cas pratiques afin de vous permettre de manipuler les outils et de comprendre par vous-même.
 
-Toutes les ressources sont ici: https://drive.google.com/drive/folders/1emHViHZ-Bs3GvlMa7zS9jhXrCJMlaTae?usp=sharing
+Toutes les ressources sont disponibles ici :  
+[https://drive.google.com/drive/folders/1emHViHZ-Bs3GvlMa7zS9jhXrCJMlaTae?usp=sharing](https://drive.google.com/drive/folders/1emHViHZ-Bs3GvlMa7zS9jhXrCJMlaTae?usp=sharing)
 
 ## Resources
-- Game optimization series from Ben Cloward: https://www.youtube.com/watch?v=jt8b0cpjUVk&list=PL78XDi0TS4lG4wvgfyGECmB8XiJLCgfFD
+
+- Game Optimization Series by Ben Cloward :  
+  [https://www.youtube.com/watch?v=jt8b0cpjUVk&list=PL78XDi0TS4lG4wvgfyGECmB8XiJLCgfFD](https://www.youtube.com/watch?v=jt8b0cpjUVk&list=PL78XDi0TS4lG4wvgfyGECmB8XiJLCgfFD)

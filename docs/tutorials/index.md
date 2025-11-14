@@ -2,4 +2,4 @@
 
 ## Liste des tutos
 
-[AUTO_SUMMARY]
+- [GPU Profiling](GPUProfiling/00_Introduction)

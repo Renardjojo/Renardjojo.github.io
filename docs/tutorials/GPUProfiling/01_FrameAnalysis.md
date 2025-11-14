@@ -1,9 +1,9 @@
 ---
-title: Frame Analysis
+title: 01 Frame Analysis
 description: Analyse d’une frame capturée dans Unity avec RenderDoc.
 ---
 
-# RenderDoc - Frame Analysis (1h)
+# RenderDoc – Frame Analysis (1h)
 
 ![Tutorial Cover](assets/renderdoc.png)
 
@@ -12,24 +12,24 @@ description: Analyse d’une frame capturée dans Unity avec RenderDoc.
 Dans ce TP, nous allons ouvrir et analyser une capture de jeu à l'aide de RenderDoc.  
 La capture a été réalisée dans le template [URP 3D Sample](https://unity.com/demos/urp-3d-sample) du moteur Unity.
 
-Ce template utilise l'Universal Render Pipeline, contenant un bon nombre de features de rendu. Le but ne sera pas
-de tout analyser en détail, mais d'apprendre à se servir de RenderDoc pour naviguer à travers la composition de la frame et inspecter les différentes ressources : textures, buffers, shaders etc...
+Ce template utilise l’Universal Render Pipeline, qui contient un grand nombre de features de rendu. L’objectif n’est pas d’analyser chaque élément en détail, mais d’apprendre à utiliser RenderDoc pour naviguer dans la composition d’une frame et inspecter les différentes ressources : textures, buffers, shaders, etc.
 
-La capture a été réalisé avec l'API *OpenGL* pour être en lien avec le cours de programmation graphique.
+La capture a été réalisée avec l’API *OpenGL* afin de rester cohérent avec le cours de programmation graphique.
 
 ???+ abstract "Rendu de TP"
-    Un cours compte-rendu de TP est à rendre à la fin de celui ci.  
+    Un court compte-rendu de TP est à rendre à la fin de celui-ci.  
     Il faudra répondre aux questions encadrées.  
-    Pas besoin de mise en page, de simples phrases suffiront. 
+    Aucune mise en page spécifique n’est requise, de simples phrases suffisent.
 
 !!! info
-    Si vous êtes bloqué, n'hésitez pas à solliciter votre encadrant.
+    Si vous êtes bloqué, n’hésitez pas à solliciter votre encadrant.
 
 ## Premiers pas
 
-[Unity](https://docs.unity3d.com/6000.2/Documentation/Manual/RenderDocIntegration.html) et [Unreal](https://dev.epicgames.com/documentation/en-us/unreal-engine/using-renderdoc-with-unreal-engine) possèdent des outils permettant de lancer une capture render doc via l'editeur et via un script. Pour simplifier le process nous allons directement étudier une capture faire depuis Unity en editeur.
+[Unity](https://docs.unity3d.com/6000.2/Documentation/Manual/RenderDocIntegration.html) et [Unreal](https://dev.epicgames.com/documentation/en-us/unreal-engine/using-renderdoc-with-unreal-engine) disposent d’outils permettant de lancer une capture RenderDoc depuis l’éditeur ou via script.  
+Pour simplifier le processus, nous allons directement étudier une capture effectuée depuis l’éditeur Unity.
 
-[Télécharger la Capture (157 Mo) :material-download:](https://noe.masse.pro/content/urp-sample_capture.rdc){ .md-button }
+[Télécharger la capture (157 Mo)](https://noe.masse.pro/content/urp-sample_capture.rdc){ .md-button }
 
 Vous pouvez ouvrir la capture via le menu `File > Open Capture`.
 
@@ -37,114 +37,112 @@ Voici le logiciel une fois la capture ouverte :
 
 ![RenderDoc Overview](assets/renderdoc_capture.png)
 
-* **Event Browser** Cette fenêtre vous permet de naviguer à travers les différentes phases et appels d'API de la frame capturée. Chaque événement possède un ID. Certains sont regroupés par section.
-* **Texture Viewer** Cette fenêtre vous permet de visualiser les textures utilisées lors d'un événement.
-* **Pipeline State** Cette fenêtre vous permet de visualiser tous les états du pipeline de rendu lors d'un drawcall : ressources attachées, shader utilisé etc...
-* **Mesh Viewer** Cette fenêtre vous permet d'inspecter les données du mesh utilisé lors d'un drawcall.
-* **Resource Inspector** Toutes les ressources créées sont répertoriées ici.
+* **Event Browser** Permet de naviguer à travers les différentes phases et appels d’API de la frame capturée. Chaque événement possède un ID et certains sont regroupés par sections.
+* **Texture Viewer** Permet de visualiser les textures utilisées lors d’un événement.
+* **Pipeline State** Permet de visualiser les états du pipeline lors d’un drawcall : ressources attachées, shader utilisé, etc.
+* **Mesh Viewer** Permet d’inspecter les données du mesh utilisé lors d’un drawcall.
+* **Resource Inspector** Regroupe toutes les ressources créées durant la frame.
 
-Pour vous facilier la tâche par la suite, assurez vous que le filtre de l'**Event Browser** soit `$action()`
+Pour faciliter la navigation, vérifiez que le filtre de l’**Event Browser** soit `$action()`.
 
-En ayant le **Texture Viewer** ouvert, ouvrez la section `(EID 511-6810) FrameTime.GPU > UIR.DrawChain` et déplacez vous sur les différents éléments. 
+Avec le **Texture Viewer** ouvert, ouvrez la section `(EID 511-6810) FrameTime.GPU > UIR.DrawChain` et parcourez les différents éléments.
 
 !!! question "Questions"
-    D'après vous, à quoi correspondent les sections `GUITexture.Draw` ?  
+    À quoi correspondent, selon vous, les sections `GUITexture.Draw` ?  
     Quelle section est la plus susceptible de nous intéresser ?
 
-Comme vous l'aurez vite remarqué, les captures peuvent contenir beaucoup d'événements et de données qui ne nous intéressent pas. Il est donc nécessaire de savoir bien naviguer au sein de celles ci.
+Les captures peuvent contenir une grande quantité d’événements et de données non pertinentes. Il est donc essentiel de savoir naviguer efficacement.
 
 ## Composition de la Frame
 
-Positionnez vous sur la section `(EID 1427-6715) ScriptableRenderer.Execute: PC_High_Renderer`.  
-En gardant le **Texture Viewer** ouvert, naviguez entre les différentes sections.
+Positionnez-vous sur la section `(EID 1427-6715) ScriptableRenderer.Execute: PC_High_Renderer`.  
+En gardant le **Texture Viewer** ouvert, parcourez les différentes sections.
 
 !!! question
     Décrivez brièvement les différentes passes de rendu du renderer.  
-    Pour chaque passe, donner le nom des Outputs et votre intuition sur ce qu'elles représentent.  
-    Il est normal que certains outputs soient incompréhensibles.  
-    *Ignorez l'événement LightCookies.*  
+    Pour chaque passe, donnez le nom des Outputs et votre intuition quant à leur rôle.  
+    Certains outputs peuvent être difficiles à interpréter, c’est normal.  
+    Ignorez l’événement *LightCookies*.
 
 ## Draw Object Passes
 
-On peut voir qu'il y a deux passes principales pour dessiner les objets. Une pour les objets opaques et une pour les objets transparents.
+On observe deux passes principales pour dessiner les objets : une pour les objets opaques et une pour les objets transparents.
 
-Une particularité du renderer d'Unity est qu'il ne clear jamais sa target de couleur. Il est donc difficile de visualiser les différents drawcalls. Pour se faire, utilisez l'overlay `Clear Before Pass`. Cela permet de forcer le clear de la target avant la passe de rendu.
+Une particularité du renderer Unity est qu’il ne clear jamais la target de couleur. Il devient donc difficile de visualiser les drawcalls.  
+Pour cela, utilisez l’overlay `Clear Before Pass`, qui force le clear de la target avant la passe.
 
 ![Texture Viewer Overlays](assets/renderdoc_clear_before_pass.png)
 
-En naviguant sur les différents drawcalls de `RenderLoop.DrawSRPBatcher`, vous pouvez voir les différents objets se dessiner petit à petit.
-Vous pouvez aussi utiliser l'overlay `Hightlight Drawcall` pour mettre en avant l'objet dessiné.
+En naviguant dans les drawcalls de `RenderLoop.DrawSRPBatcher`, vous pouvez voir les objets se dessiner progressivement.  
+Vous pouvez également utiliser l’overlay `Highlight Drawcall` pour mettre en évidence l’objet rendu.
 
 !!! question
-    Selectionnez l'output de Depth.  
-    Utilisez la baguette pour automatiquement ajuster la range de depth.
+    Sélectionnez l’output de Depth.  
+    Utilisez la baguette pour ajuster automatiquement la depth range.
 
     ![Depth Range Tool](assets/renderdoc_depth_range.png)  
     
-    Que pouvez vous observer entre les différents drawcalls ?
+    Que pouvez-vous observer entre les différents drawcalls ?
 
 Pour valider votre intuition, choisissez un drawcall et ouvrez la fenêtre **Pipeline State**.
 
 ![Pipeline State Window](assets/renderdoc_pipeline_state.png)
 
-En haut, vous pouvez apercevoir les différent stages du pipeline de rendu que vous conaissez bien.
+En haut, vous retrouvez les différents stages du pipeline graphique.
 
-Cliquez sur le stage `Framebuffer Output (FB)`. Le *Depth State* se trouve en bas.
+Cliquez sur le stage `Framebuffer Output (FB)`. Le *Depth State* apparaît en bas.
 
 !!! question
-    Décrivez le depth state et validez (ou invalidez) votre intuition.  
-    En revenant sur les passes de rendu que vous avez observé, quel lien pouvez vous faire ?
+    Décrivez le depth state et validez (ou non) votre intuition.  
+    En revenant sur les passes observées, quel lien pouvez-vous établir ?
 
-## Étude d'un DrawCall
+## Étude d’un DrawCall
 
 Choisissez un autre drawcall de la passe `DrawOpaqueObjects` et ouvrez la fenêtre `Pipeline State`.  
-Prenez de préférence un drawcall bien visible.
+Sélectionnez un drawcall visuellement identifiable.
 
-#### Vertex Input
+### Vertex Input
 
 !!! question
-    Quels sont les différents attributs définis par Unity ?  
-    Unity utilise-t-il un seul ou plusieurs Buffer pour les vertices ?  
-    Ecrivez la structure correspondante au modèle de l'objet en C++.
+    Quels sont les attributs définis par Unity ?  
+    Unity utilise-t-il un seul ou plusieurs buffers pour les vertices ?  
+    Écrivez en C++ la structure correspondant au modèle de l’objet.
 
-#### Vertex Shader
+### Vertex Shader
 
-Fouillez dans les informations disponibles.  
-Pour pouvez inspecter les données des uniforms en cliquant sur la flèche dans la section Go.
+Explorez les informations disponibles.  
+Vous pouvez inspecter les uniforms en cliquant sur la flèche dans la section Go.
 
 !!! question
     Où se trouvent les matrices ViewProjection (VP) et ObjectToWorld (M) ?  
-    Que pouvez vous déduire des noms des Uniform Buffers ?
+    Que déduisez-vous du nom des Uniform Buffers ?
 
-#### Fragment Shader
+### Fragment Shader
 
-On peut constater que pas mal de ressources sont utilisées par le fragment shader. On y retrouve notamment les ShadowMaps générées par les passes précedentes.
+On constate que de nombreuses ressources sont utilisées par le fragment shader, notamment les ShadowMaps générées dans les passes précédentes.
 
 !!! question "Exercice"
-
-    Ouvre le shader en mode édition :
+    Ouvrez le shader en mode édition :
 
     ![Fragment Shader Edition](assets/renderdoc_shader_edit.png)
 
-    Le shader est obfusqué mais écrit en glsl.  
-    Modifiez le shader pour que l'objet dessiné soit vert (0, 1, 0).
+    Le shader est obfusqué mais écrit en GLSL.  
+    Modifiez-le pour que l’objet dessiné soit vert (0, 1, 0).
 
     ![Green Object](assets/renderdoc_shader_edit_example.png)
 
 ???+ question "Exercice (Bonus 1)"
-
-    Explorons ensemble un frame du jeu Qwent.  
-    Essayer de comprendre comment leur carte animé fonctionne.  
-    Essayer également de voir quelle erreur potentiellement dangereuse les developpeurs ont fait sur cette frame (tutorial)  
+    Explorons une frame du jeu *Qwent*.  
+    Essayez de comprendre comment fonctionne leur carte animée.  
+    Identifiez également une erreur potentiellement dangereuse commise par les développeurs dans cette frame (tutorial).
 
 ???+ question "Exercice (Bonus 2)"
+    Comme dans l’exercice précédent, modifiez le shader pour qu’il affiche les UVs de l’objet.  
+    Vous devrez examiner le code du vertex shader.
 
-    Comme pour l'exercice précédent, modifiez le shader pour qu'il affiche les UVs de l'objet.  
-    Vous aurez besoin d'aller voir le code du vertex shader.
-
-    ![Object dispalying UVs](assets/renderdoc_shader_edit_example_uv.png)
+    ![Object displaying UVs](assets/renderdoc_shader_edit_example_uv.png)
 
 ## Pour aller plus loin
 
-Nous avons fait le tour de fonctionalités de base. 
-Pour aller plus loin, vous pouvez vous rendre sur la [documentation officielle :link:](https://renderdoc.org/docs/introduction.html).
+Nous avons couvert les fonctionnalités de base.  
+Pour aller plus loin, consultez la [documentation officielle](https://renderdoc.org/docs/introduction.html).

@@ -1,42 +1,51 @@
 ---
 title: 03 Rapport de profiling
-description: Qu'est ce que c'est et comment le construire
+description: Qu’est-ce que c’est et comment le construire
 ---
 
-# Rapport profiling GPU - Pix (1h)
+# Rapport de profiling GPU – Pix (1 h)
 
-??? Réflechissez à ce sujet avec de passer à la suite. 
-Que devrait contenir un rapport de profiling pour vous ?
+Avant de passer à la suite, posez-vous la question suivante :
+Que devrait contenir un rapport de profiling selon vous ?
 
-Un rapport de profiling est un document permettant de mieu comprendre le fonctionnement du jeu. Celui ci peut contenir beaucoup d'élement d'étude:
+Un rapport de profiling est un document permettant de mieux comprendre le fonctionnement d’un jeu. Il peut contenir différents éléments d’analyse :
+
 - Profiling CPU
 - Profiling GPU
-- Analyse de draw call et du bus CPU/GPU
-- Impacte RAM
-- Impacte VRAM (extrement important sur Ios)
-- Analyse des spicks/freezes
-- Consomation d'energie / évolution de la batterie (important sur mobile)
+- Analyse des draw calls et du bus CPU/GGPU
+- Impact RAM
+- Impact VRAM ou RAM/VRAM (très important sur iOS -> mémoir unifié)
+- Analyse des spikes et freezes
+- Consommation d’énergie et évolution de la batterie (important sur mobile)
 - Chauffe du device (important sur mobile)
 
-Un rapport de profiling doit être réflechi avant d'être attaqué. Il faut 
-- définir sur quel device faire tourner le teste (low end ou device aillant le plus de tool de profiling ?)
-- définir les scenes à étudier (homescreen ? core gameplay ? Context spécifique du jeu)
-- définir dans quelle condition on réalise le teste (premier lancement ? Device chaud ? Build release ou dev ?)
-- Avec quel parametre graphique on étudie le jeu (graphique setting low/medium/high, autre...)
+## Définir le cadre du rapport
 
-Il est important de définir clairement le contexte choisie et de mettre des screens car le jeu évolue vite et c'est ce qui permet a certaine data d'être compararer et de rester exploitable sur le long terme.
+Avant de produire un rapport de profiling, il est essentiel de définir :
 
-Voici un example de rapport de profiling:
-![alt text](assets/ProfilingReport1.png) 
-![alt text](assets/ProfilingReport2.png) 
-![alt text](assets/ProfilingReport3.png) 
-![alt text](assets/ProfilingReport4.png) 
-![alt text](assets/ProfilingReport5.png) 
-![alt text](assets/ProfilingReport6.png) 
-![alt text](assets/ProfilingReport7.png)
+- Le device utilisé pour le test (low-end ou device équipé des meilleurs outils)
+- Les scènes à analyser (home screen, core gameplay, cas spécifiques)
+- Les conditions du test (premier lancement, device chaud, build release ou dev)
+- Les paramètres graphiques utilisés (settings low / medium / high)
 
-Ce rapport est très simple mais m'a permis d'étudier les preset graphique du jeu sur lequel j'ai travailler afin de mieu les étalonners. 
+Il est important d’expliquer clairement le contexte et d’ajouter des screenshots, car le jeu évolue rapidement. Cela permet de comparer les données à long terme et de conserver un rapport exploitable.
 
-A vous maintenant de faire l'analyse d'un projet de votre choix (celui fourni ou un autre en dev build si vous le pouvez). Essayer de comprendre le fonctionnement du jeu et analysez l'une de ses frame. 
+## Exemple de rapport de profiling
 
-Saviez vous que c'est une pratique courante chez les developpeur rendu ? C'est une méthode permettant de se mettre en jour et de comprendre certaine technique de rendu : [link](https://www.adriancourreges.com/blog/2020/12/29/graphics-studies-compilation/)
+![Profiling Report 1](assets/ProfilingReport1.png)
+![Profiling Report 2](assets/ProfilingReport2.png)
+![Profiling Report 3](assets/ProfilingReport3.png)
+![Profiling Report 4](assets/ProfilingReport4.png)
+![Profiling Report 5](assets/ProfilingReport5.png)
+![Profiling Report 6](assets/ProfilingReport6.png)
+![Profiling Report 7](assets/ProfilingReport7.png)
+
+Ce rapport est simple, mais il m’a permis d’étudier les presets graphiques du jeu sur lequel je travaillais et de mieux les ajuster.
+
+??? Question
+    Réalisez maintenant votre propre analyse sur un projet de votre choix (celui fourni ou un autre en dev build si possible). Essayez de comprendre le fonctionnement du jeu et analysez l’une de ses frames.
+
+Comprendre le fonctinnement d'une frame est une pratique courante chez les développeurs rendu. Elle permet de rester à jour et de comprendre différentes techniques de rendering.
+
+Consultez par exemple :
+[Graphics Studies Compilation](https://www.adriancourreges.com/blog/2020/12/29/graphics-studies-compilation/)
