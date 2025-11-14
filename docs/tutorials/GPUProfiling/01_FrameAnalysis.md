@@ -5,7 +5,7 @@ description: Analyse d’une frame capturée dans Unity avec RenderDoc.
 
 # RenderDoc – Frame Analysis (1h)
 
-![Tutorial Cover](assets/renderdoc.png)
+![Tutorial Cover](assets/renderdoc.png)  
 
 ## Introduction
 
@@ -14,12 +14,8 @@ La capture a été réalisée dans le template [URP 3D Sample](https://unity.com
 
 Ce template utilise l’Universal Render Pipeline, qui contient un grand nombre de features de rendu. L’objectif n’est pas d’analyser chaque élément en détail, mais d’apprendre à utiliser RenderDoc pour naviguer dans la composition d’une frame et inspecter les différentes ressources : textures, buffers, shaders, etc.
 
-La capture a été réalisée avec l’API *OpenGL* afin de rester cohérent avec le cours de programmation graphique.
-
-???+ abstract "Rendu de TP"
-    Un court compte-rendu de TP est à rendre à la fin de celui-ci.  
-    Il faudra répondre aux questions encadrées.  
-    Aucune mise en page spécifique n’est requise, de simples phrases suffisent.
+???+ abstract "TP"
+    Répondez simplement aux questions encadrées, creusez et posez des questions pour en apprendre plus.
 
 !!! info
     Si vous êtes bloqué, n’hésitez pas à solliciter votre encadrant.
@@ -29,7 +25,8 @@ La capture a été réalisée avec l’API *OpenGL* afin de rester cohérent ave
 [Unity](https://docs.unity3d.com/6000.2/Documentation/Manual/RenderDocIntegration.html) et [Unreal](https://dev.epicgames.com/documentation/en-us/unreal-engine/using-renderdoc-with-unreal-engine) disposent d’outils permettant de lancer une capture RenderDoc depuis l’éditeur ou via script.  
 Pour simplifier le processus, nous allons directement étudier une capture effectuée depuis l’éditeur Unity.
 
-[Télécharger la capture (157 Mo)](https://noe.masse.pro/content/urp-sample_capture.rdc){ .md-button }
+[Télécharger renderdoc](https://renderdoc.org/stable/1.41/RenderDoc_1.41_64.msi){ .md-button }
+[Télécharger la capture (157 Mo)](https://drive.google.com/file/d/10G868FvfBcegQ5EyBCgYuIkppJVbDPLf/view?usp=drive_link){ .md-button }
 
 Vous pouvez ouvrir la capture via le menu `File > Open Capture`.
 
@@ -134,7 +131,8 @@ On constate que de nombreuses ressources sont utilisées par le fragment shader,
 ???+ question "Exercice (Bonus 1)"
     Explorons une frame du jeu *Qwent*.  
     Essayez de comprendre comment fonctionne leur carte animée.  
-    Identifiez également une erreur potentiellement dangereuse commise par les développeurs dans cette frame (tutorial).
+    Identifiez également une erreur potentiellement dangereuse commise par les développeurs dans cette frame (tutorial).  
+    [Télécharger la capture (147.2 Mo)](https://drive.google.com/file/d/1Gb70-KDBiHlXS-AZmZ2izZIPK_nF66fu/view?usp=drive_link){ .md-button }
 
 ???+ question "Exercice (Bonus 2)"
     Comme dans l’exercice précédent, modifiez le shader pour qu’il affiche les UVs de l’objet.  

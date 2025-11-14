@@ -7,8 +7,8 @@ description: Avec Pix
 
 ## Introduction
 
-Le profiling GPU permet de comprendre les goulots d’étranglement d’un GPU en fonction de ses cycles matériels.  
-Plusieurs types de bottlenecks peuvent être identifiés dans un shader : la bande passante mémoire, l’utilisation des ALU (arithmetic logic units), le sampling, ou encore le débit d’instructions.  
+Le profiling GPU permet d'identifier et de comprendre les goulots d’étranglement.
+Plusieurs types de bottlenecks peuvent être identifiés dans un shader : la bande passante mémoire, l’utilisation des ALU (arithmetic logic units), le sampling, ou l'interpolationn des varying...  
 Il est donc essentiel de comprendre les limitations techniques du GPU que l’on utilise.
 
 ## Les outils
@@ -24,7 +24,7 @@ Il existe de nombreux outils de profiling GPU selon les fabricants d’API ou d�
 | **Nintendo Switch**                      | NX Graphics Debugger                                              | Disponible uniquement pour développeurs agréés |
 | **Android (OpenGL / Vulkan / GPU)**      | Adreno Profiler, ARM Mali GPU Profiler                            | Selon le GPU du device |
 | **PlayStation 5**                        | PS5 GPU Profiler                                                  | Disponible uniquement pour développeurs enregistrés |
-| **Xbox Series X|S**                      | Xbox Developer Kit GPU Profiler                                   | Disponible uniquement pour développeurs enregistrés |
+| **Xbox Series X/S**                      | Xbox Developer Kit GPU Profiler                                   | Disponible uniquement pour développeurs enregistrés |
 
 ### Quelques exemples
 
@@ -47,11 +47,15 @@ Xcode possède d’excellents outils de profiling CPU / mémoire / GPU, ainsi qu
 
 ## TP
 
-Pour ce TP, nous allons utiliser PIX, version [2509](https://download.microsoft.com/download/6af3c4fa-0513-4e0e-a781-1126df3211a1/PIX-2509.25-Installer-x64.exe).
+Pour ce TP, nous allons utiliser PIX, version 2509  
+[Télécharger Pix](https://download.microsoft.com/download/6af3c4fa-0513-4e0e-a781-1126df3211a1/PIX-2509.25-Installer-x64.exe){ .md-button }  
 
 Nous allons analyser une frame de mon PFE sous DirectX 12 sur PC.  
 Gardez en tête que ce projet est conçu pour tourner sur Nintendo Switch :  
 le test sera donc biaisé par le matériel utilisé, mais ce biais reste acceptable pour comprendre le profiling GPU.
+
+[Télécharger le jeu (534.6 Mo)](https://drive.google.com/file/d/1nlTqvkJBxcYCyiYp2iYDF4GNUXCBlpjB/view?usp=sharing){ .md-button }
+[Télécharger la capture (534.6 Mo)](https://drive.google.com/file/d/1kkzDywK8pQlAlPzvpSUCCO4GUL9wQ4hG/view?usp=drive_link){ .md-button }  
 
 Ajoutez l’onglet **Pipeline** à côté de l’onglet **Warning** et sélectionnez-le.  
 Sélectionnez **RTV 0** et explorez le champ **Visualization**.
@@ -62,7 +66,7 @@ Déployez ensuite la fenêtre **Execution Duration** dans la timeline.
 
 ## Comprendre le contexte du jeu
 
-??? question
+!!! question
     Décrivez rapidement les grandes étapes de rendu du jeu.  
     Le jeu tourne normalement à 60 FPS sur Switch. Pourquoi tourne-t-il légèrement au-dessus de 60 FPS sur PC ?
 
@@ -72,7 +76,7 @@ Déployez ensuite la fenêtre **Execution Duration** dans la timeline.
 
 Nous allons commencer par étudier le terrain.
 
-??? question
+!!! question
     Estimez rapidement le temps nécessaire pour calculer le terrain.  
     Comprenez-vous comment il est rendu ?  
     Connaissez-vous le nom de cette technique ?  
@@ -87,7 +91,7 @@ Nous allons commencer par étudier le terrain.
 
 ## Les robots
 
-??? question
+!!! question
     Combien de temps faut-il pour rendre les robots ?  
     Comment sont-ils rendus, et avec quelle technique ?  
     Cette technique a-t-elle un impact sur le GPU selon vous ?
@@ -96,7 +100,7 @@ Dans la fenêtre **Tools > Dr PIX**, sélectionnez **Primitive & Rasterization**
 Choisissez l’event du draw des robots, lancez un test et notez la valeur de **Quad Efficiency**.  
 Faites le même test avec un terrain.
 
-??? question
+!!! question
     Que remarquez-vous ?  
     Pourquoi cette valeur n’est-elle pas de 100% pour le terrain ?
 
@@ -130,10 +134,10 @@ Pistes de profiling simples :
 Liens utiles :
 
 - Démonstration sur les `if` dans les shaders :  
-  [ShaderToy – Branching](https://www.shadertoy.com/view/wlsGDl)
+  [ShaderToy – Branching](https://www.shadertoy.com/view/wlsGDl)  
 
 - Vidéo GDC démystifiant les croyances sur les shaders :  
-  [Investigating and Dispelling Shader Myths](https://gdcvault.com/play/1028185/Investigating-and-Dispelling-Shader-Myths)
+  [Investigating and Dispelling Shader Myths](https://gdcvault.com/play/1028185/Investigating-and-Dispelling-Shader-Myths)  
 
 - Documentation sur le *tile-based rendering* mobile :  
-  [Samsung – GPU framebuffer](https://developer.samsung.com/galaxy-gamedev/resources/articles/gpu-framebuffer.html)
+  [Samsung – GPU framebuffer](https://developer.samsung.com/galaxy-gamedev/resources/articles/gpu-framebuffer.html)  
