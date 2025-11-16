@@ -31,7 +31,7 @@ De la même manière, une bonne connaissance du jeu est indispensable pour propo
 Ce tutoriel est conçu sous la forme d’un TP basé sur des cas pratiques afin de vous permettre de manipuler les outils et de comprendre par vous-même.
 
 Toutes les ressources sont disponibles ici :  
-[https://drive.google.com/drive/folders/1emHViHZ-Bs3GvlMa7zS9jhXrCJMlaTae?usp=sharing](https://drive.google.com/drive/folders/1emHViHZ-Bs3GvlMa7zS9jhXrCJMlaTae?usp=sharing)
+[Google drive](https://drive.google.com/drive/folders/1emHViHZ-Bs3GvlMa7zS9jhXrCJMlaTae?usp=sharing)
 
 ## Resources
 

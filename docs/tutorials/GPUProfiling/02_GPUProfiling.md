@@ -1,5 +1,5 @@
 ---
-title: GPU profiling
+title: 02 GPU profiling
 description: Avec Pix
 ---
 
@@ -54,7 +54,7 @@ Nous allons analyser une frame de mon PFE sous DirectX 12 sur PC.
 Gardez en tête que ce projet est conçu pour tourner sur Nintendo Switch :  
 le test sera donc biaisé par le matériel utilisé, mais ce biais reste acceptable pour comprendre le profiling GPU.
 
-[Télécharger le jeu (534.6 Mo)](https://drive.google.com/file/d/1nlTqvkJBxcYCyiYp2iYDF4GNUXCBlpjB/view?usp=sharing){ .md-button }
+[Télécharger le jeu (304.7 Mo)](https://drive.google.com/file/d/1nlTqvkJBxcYCyiYp2iYDF4GNUXCBlpjB/view?usp=sharing){ .md-button }
 [Télécharger la capture (534.6 Mo)](https://drive.google.com/file/d/1kkzDywK8pQlAlPzvpSUCCO4GUL9wQ4hG/view?usp=drive_link){ .md-button }  
 
 Ajoutez l’onglet **Pipeline** à côté de l’onglet **Warning** et sélectionnez-le.  
