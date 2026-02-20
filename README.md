@@ -1,8 +1,8 @@
 ## How to setup
 pip install --upgrade pip
-python -m pip install mkdocs
+python3 -m pip install mkdocs
 pip install mkdocs-material
 
 ## How to test
-python -m mkdocs serve
+python3 -m mkdocs serve
 
