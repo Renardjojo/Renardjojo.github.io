@@ -76,4 +76,4 @@ nav:
         - 02 Frame Analysis: tutorials/GPUProfiling/01_FrameAnalysis.md
         - 03 GPU profiling: tutorials/GPUProfiling/02_GPUProfiling.md
         - 04 Rapport de profiling: tutorials/GPUProfiling/03_RapportProfiling.md
-      - LearnOpenGL tutorials: tutorials/TPLightingUnity/00_Introduction.md
+      - TP Lighting Unity: tutorials/TPLightingUnity/00_Introduction.md
