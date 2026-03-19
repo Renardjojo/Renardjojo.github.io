@@ -28,6 +28,7 @@ Cherchez à incarner un programmeur rendu seul dans une équipe, qui doit prendr
 ## Déroulement du TP
 Avant de commencer à explorer le sujet, formez des groupes de 2 ou 3.  
 Vous allez brainstormer pendant 15/30 minutes afin d’évoquer toutes les pistes possibles.  
+Faite une estimation de vos taches pour le producer  
 Après ce brainstorming, vous passerez 5 minutes pour proposer les solutions proposées.  
 
 ### Ce que vous devez définir :
