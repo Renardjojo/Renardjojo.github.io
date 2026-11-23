@@ -1,6 +1,5 @@
-
 ---
-title: 02 Drawing a triangle
+title: 01 Drawing a triangle
 ---
 
 # TP noté

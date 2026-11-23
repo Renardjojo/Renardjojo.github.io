@@ -1,6 +1,5 @@
-
 ---
-title: 00 Context
+title: 00 Introduction
 ---
 
 # Context
