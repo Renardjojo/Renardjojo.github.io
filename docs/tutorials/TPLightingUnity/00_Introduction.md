@@ -49,5 +49,5 @@ Conseil : utilisez-la comme un mentor ou pour générer des morceaux de code sp�
 
 ## Sujet bonus :  
 Réfléchissez maintenant à comment gérer, de façon simple et efficace, un système de graphic settings.
-Rajoutez des effets sur les terrains : cloud shadow, végétation, vent, vent interactif, fog interactif, eau, eau interactive.
+Rajoutez des effets sur les terrains : cloud shadow, végétation, vent, vent interactif, fog interactif, eau, eau interactive, LUT (vous pourrez utiliser ce générateur https://noe.masse.pro/palette2lut/).
 (Par interactif, j’entends qu’il doit se passer quelque chose lors du clic.)

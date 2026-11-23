@@ -64,16 +64,3 @@ markdown_extensions:
       alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
-
-nav:
-  - Accueil: index.md
-  - About: about/index.md
-  - Tutorials:
-      - tutorials/index.md
-      - LearnOpenGL tutorials: tutorials/LearnOpenGL/index.md
-      - GPU Profiling:
-        - 01 Intro: tutorials/GPUProfiling/00_Introduction.md
-        - 02 Frame Analysis: tutorials/GPUProfiling/01_FrameAnalysis.md
-        - 03 GPU profiling: tutorials/GPUProfiling/02_GPUProfiling.md
-        - 04 Rapport de profiling: tutorials/GPUProfiling/03_RapportProfiling.md
-      - TP Lighting Unity: tutorials/TPLightingUnity/00_Introduction.md
